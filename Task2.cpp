@@ -7,24 +7,25 @@ void overlap(int rec1[], int rec2[]){
         cout << "False";
     } else {
         cout << "True";
-        }
+    }
 }
 
-int main()
-{
-  int rec1[4];
-  int rec2[4];
+int main() {
+    int rec1[4];
+    int rec2[4];
   
-  cout << "Enter the value of the 1st rectangle: ";
-  for(int i = 0; i < 4; i++){
-    cin >> rec1[i];
-    }
-    
-  cout << "Enter the value of the 2nd rectangle: ";
-  for(int i = 0; i < 4; i++){
-    cin >> rec2[i];
-    }
+    cout << "Enter the value of the 1st rectangle: ";
+    for(int i = 0; i < 4; i++){
+        cin >> rec1[i];
+        }
+
+    cout << "Enter the value of the 2nd rectangle: ";
+    for(int i = 0; i < 4; i++){
+        cin >> rec2[i];
+        }
   
-  cout << "Two rectangles overlap: ";
-  overlap(rec1,rec2);
+    cout << "Two rectangles overlap: ";
+    overlap(rec1, rec2);
+
+    return 0;
 }
