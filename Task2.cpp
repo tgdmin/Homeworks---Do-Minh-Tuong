@@ -16,9 +16,14 @@ int main()
   int rec2[4];
   
   cout << "Enter the value of the 1st rectangle: ";
-  for(int i = 0; i < 4; i++) cin >> rec1[i];
+  for(int i = 0; i < 4; i++){
+    cin >> rec1[i];
+    }
+    
   cout << "Enter the value of the 2nd rectangle: ";
-  for(int i = 0; i < 4; i++) cin >> rec2[i];
+  for(int i = 0; i < 4; i++){
+    cin >> rec2[i];
+    }
   
   cout << "Two rectangles overlap: ";
   overlap(rec1,rec2);
