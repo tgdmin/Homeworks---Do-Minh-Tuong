@@ -7,32 +7,32 @@
 #include <iostream>
 using namespace std;
 
-string New(string x) {             
-    int count = 0;
-    int alpha[26];
+string New(string z) {             // This function is to make a new character based on its input
+    int p = 0;
+    int alpha[26];          // alpha is to keep track of the characters
     for (int i = 0; i < 26; i++){
         alpha[i]=0;
     }  
     
-    for (int i = 0; i < x.length(); ++i){
-        if(bool (x[i]-x[0])){
-            if (alpha[x[i]-'a']==0){
-                alpha[x[i]-'a'] = 1 + count;
-                count++;
+    for (int i = 0; i < z.length(); ++i){       // Make unique identifier to each distinct character
+        if(bool (z[i]-z[0])){
+            if (alpha[z[i]-'a']==0){
+                alpha[z[i]-'a'] = 1 + p;
+                p++;
             }       
         } 
     }
  
-    for (int i = 0; i < x.length(); ++i) {    
-        x[i] = 'a' + alpha[x[i]-'a'];
+    for (int i = 0; i < z.length(); ++i) {    
+        z[i] = 'a' + alpha[z[i]-'a'];
     }
-    return x;
+    return z;
 }
 
-void match_the_pattern(string a[], string p, int n){     
+void match_the_pattern(string a[], string l, int n){        // Condition for the input to match the pattern
     int k = 0;
     for (int i = 0; i < n; i++){
-        if (New(a[i]) == New(p)){
+        if (New(a[i]) == New(l)){
             cout << a[i] << "; ";
             k++;
         }

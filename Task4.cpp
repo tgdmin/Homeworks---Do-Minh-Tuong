@@ -4,10 +4,10 @@
 #include <iostream>
 using namespace std;
 
-void Spiraling(int res[][10], int n, int& val, int& top, int& bottom, int& left, int& right) {
+void Spiraling(int res[][10], int n, int& val, int& top, int& bottom, int& left, int& right) {      // This function is to transform the original matrix
     while ((left <= right) && (top <= bottom)) {
 
-        for (int c = left; c <= right; c++) {
+        for (int c = left; c <= right; c++) {           // These loops are steps
             res[top][c] = val;
             val += 1;
         }
@@ -33,7 +33,7 @@ void Spiraling(int res[][10], int n, int& val, int& top, int& bottom, int& left,
     }
 }
 
-void print_Matrix(int res[][10], int n) {
+void print_Matrix(int res[][10], int n) {       // This function is to print the output
     for (int i = 0; i < n; i++) {
         cout << "[";
         for (int j = 0; j < n; j++) {
@@ -43,7 +43,7 @@ void print_Matrix(int res[][10], int n) {
     }
 }
 
-void creat_SpiralMatrix(int n) {
+void creat_SpiralMatrix(int n) {        // This function is to creat the output matrix
     int res[10][10] = {0};
     int val = 1;
     int top = 0, bottom = n - 1;

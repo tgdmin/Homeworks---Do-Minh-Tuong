@@ -9,7 +9,7 @@
 #include <iostream>
 using namespace std;
 
-void overlap(int rec1[], int rec2[]){     
+void overlap(int rec1[], int rec2[]){       // This function is used to declare the condition of overlapping rectangles
     if ((rec2[0] >= rec1[2]) || (rec1[0] >= rec2[2]) || (rec2[1] >= rec1[3]) || (rec1[1] >= rec2[3])) {
         cout << "False";
     } else {

@@ -14,12 +14,12 @@ void swap(int& a, int& b) {
     b = temp;
 }
 
-int partition_for_qs(int** arr, int low, int high) {
-    int pivot = arr[high][0];
+int partition_for_qs(int** arr, int low, int high) {        // This function is the partition which is used later for quicksort
+    int p = arr[high][0];
     int i = low - 1;
 
     for (int j = low; j <= high - 1; j++) {
-        if (arr[j][0] <= pivot) {
+        if (arr[j][0] <= p) {
             i++;
             for (int k = 0; k < 2; k++) {
                 swap(arr[i][k], arr[j][k]);
@@ -32,7 +32,7 @@ int partition_for_qs(int** arr, int low, int high) {
     return i + 1;
 }
 
-void quickSort(int** arr, int low, int high) {
+void quickSort(int** arr, int low, int high) {          // Sorting all the values
     if (low < high) {
         int pi = partition_for_qs(arr, low, high);
         quickSort(arr, low, pi - 1);
@@ -40,7 +40,7 @@ void quickSort(int** arr, int low, int high) {
     }
 }
 
-int max_Russiandoll(int** arr, int n) {
+int max_Russiandoll(int** arr, int n) {         // Find the maximum value which is the answer
     if (n == 0) {
         return 0;
     }
@@ -48,12 +48,12 @@ int max_Russiandoll(int** arr, int n) {
     quickSort(arr, 0, n - 1);
 
     int res = 1;
-    int maxHeight = arr[0][1];
+    int max_H = arr[0][1];
 
     for (int i = 1; i < n; i++) {
-        if (arr[i][1] > maxHeight) {
+        if (arr[i][1] > max_H) {
             res++;
-            maxHeight = arr[i][1];
+            max_H = arr[i][1];
         }
     }
 
@@ -77,7 +77,7 @@ int main() {
 
     cout << "Maximum number of envelopes that can be Russian doll: " << answer;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {       // Delete the memories which indicated before
         delete[] arr[i];
     }
     delete[] arr;

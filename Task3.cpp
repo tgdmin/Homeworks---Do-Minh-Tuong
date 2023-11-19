@@ -7,7 +7,7 @@
 #include <iostream>
 using namespace std;
 
-int dis(int a, int b){              
+int dis(int a, int b){      // This function is to calculate Euclidean distance from point to (0,0)      
     int dis;
     dis = a*a + b*b;
     return dis;
@@ -31,7 +31,7 @@ int main()
     int k;
     cin >> k;
     
-    int dis_to_origin[n];                                             
+    int dis_to_origin[n];                   // Calculate the distance and stores inside dis_to_origin                   
     for(i = 0; i < n; i++){
         dis_to_origin[i] = dis(points[i*2], points[i*2+1]);
     }
@@ -48,14 +48,14 @@ int main()
    
     int check = 0;   
     
-    for(i = 0; i < n; i++){                                                         
+    for(i = 0; i < n; i++){             // Conditions to declare the answer                                            
         if(dis(points[i*2], points[i*2+1]) < dis_to_origin[k]){
             cout << "[" << points[i*2] << ", " << points[i*2+1] << "]" << endl;
         check++;
         }
     }
     
-    if(check == 0){
+    if(check == 0){         
         for(i = 0; i < n; i++){                                                         
             if(dis(points[i*2], points[i*2+1]) <= dis_to_origin[k]){
                 cout << "[" << points[i*2] << ", " << points[i*2+1] << "]" << endl;
