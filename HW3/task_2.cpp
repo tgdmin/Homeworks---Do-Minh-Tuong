@@ -26,6 +26,6 @@ struct SumOfSequence<Base, 0> {
 
 int main() {
     cout << "Sum of Power sequence: " << endl;
-    cout << SumOfSequence<2, 5>::Value;  // You can change the values of Base and Exponent here
+    cout << SumOfSequence<2, 5>::Value;  
     return 0;
 }
