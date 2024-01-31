@@ -271,29 +271,18 @@ public:
 
 int main() {
     // General case:
-    int inputValue;
+    // General case:
     Matrix<int, 2, 3> matrix1;
-    std::cout << "Input of matrix 1" << std::endl;
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 3; j++) {
-            std::cin >> inputValue;
-            matrix1(i, j) = inputValue;
-        }
-    }
-
-    std::cout << "Input of matrix 2" << std::endl;
-    Matrix<int, 3, 2> matrix2;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 2; j++) {
-            std::cin >> inputValue;
-            matrix2(i, j) = inputValue;
-        }
-    }
-
     std::cout << "Matrix 1 is: " << std::endl;
+    matrix1(0, 0) = 1; matrix1(0, 1) = 2; matrix1(0, 2) = 3;
+    matrix1(1, 0) = 4; matrix1(1, 1) = 5; matrix1(1, 2) = 6;
     matrix1.print();
 
+    Matrix<int, 3, 2> matrix2;
     std::cout << "Matrix 2 is: " << std::endl;
+    matrix2(0, 0) = 7; matrix2(0, 1) = 8;
+    matrix2(1, 0) = 9; matrix2(1, 1) = 10;
+    matrix2(2, 0) = 11; matrix2(2, 1) = 12;
     matrix2.print();
 
     Matrix<int, 2, 2> matrix3 = matrix1 * matrix2;
@@ -307,28 +296,20 @@ int main() {
     // Specialization case: 
     Matrix<int, 1, 3> matrixX;
     Matrix<int, 1, 3> matrixY;
-    int inputValueY;
-    std::cout << "Input matrix X: " << std::endl;
-    for (int i = 0; i < 1; i++) {
-        for (int j = 0; j < 3; j++) {
-            std::cin >> inputValueY;
-            matrixX(i, j) = inputValueY;
-        }
-    }
+    std::cout << "Matrix X is: " << std::endl;
+    matrixX(0, 0) = 1; matrixX(0, 1) = 2; matrixX(0, 2) = 3;
+    matrixX.print();
 
-    std::cout << "Input matrix Y: " << std::endl;
-    for (int i = 0; i < 1; i++) {
-        for (int j = 0; j < 3; j++) {
-            std::cin >> inputValueY;
-            matrixY(i, j) = inputValueY;
-        }
-    }
+    std::cout << "Matrix Y is: " << std::endl;
+    matrixY(0, 0) = 4; matrixY(0, 1) = 5; matrixY(0, 2) = 6;
+    matrixY.print();
 
     Matrix<int, 1, 3> matrixZ = matrixX + matrixY;
     std::cout << "The matrix (X + Y) is: " << std::endl;
     matrixZ.print();
     std::cout << "L2 Norm is equal: " << std::endl;
     std::cout << matrixZ.Norm();
+
 
     return 0;
 }
